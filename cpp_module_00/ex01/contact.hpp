@@ -1,3 +1,6 @@
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
 #include<iostream>
 #include<string>
 
@@ -9,21 +12,24 @@ private:
     std::string phoneNumber;
     std::string darkestSecret;
 public:
-    Contact();
-    ~Contact();
-
-    void setFirstName(std::string& firstName);
-    void setLastName(std::string& lastName);
-    void setNickname(std::string& nickname);
-    void setPhoneNumber(std::string& phoneNumber);
-    void setDarkestSecret(std::string& darkestSecret);
-
-    std::string getFirstName();
-    std::string getLastName();
-    std::string getNickname();
-    std::string getPhoneNumber();
-    std::string getDarkestSecret();
-
-    void displayContact();
-    void clear();
+    Contact(); // Constructor
+    ~Contact(); // Destructor
+// Setters
+    void setFirstName(const std::string& firstName);
+    void setLastName(const std::string& lastName);
+    void setNickname(const std::string& nickname);
+    void setPhoneNumber(const std::string& phoneNumber);
+    void setDarkestSecret(const std::string& darkestSecret);
+// Getters
+    std::string getFirstName() const;
+    std::string getLastName() const;
+    std::string getNickname() const;
+    std::string getPhoneNumber() const;
+    std::string getDarkestSecret() const;
+// Display methods
+    void displayFullInfo() const;
+    std::string getTruncatedField(const std::string& field) const;
+    bool isEmpty() const;
 };
+
+#endif

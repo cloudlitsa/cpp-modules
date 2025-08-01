@@ -1,58 +1,68 @@
+#include "contact.hpp"
+#include <iomanip> // For std::setw
 #include <iostream>
 #include <string>
-#include "contact.hpp"
 
+// Constructor is called when a Contact object is created
 Contact::Contact() {
-    // Constructor implementation
+    // Ithe string members are initialized to empty strings
 }
-
+// Destructor is called when a Contact object is destroyed
 Contact::~Contact() {
-    // Destructor implementation
+    // cleanup code can be added here if needed
+}
+// setter methods to set the values of the private members
+void Contact::setFirstName(const std::string& firstName) {
+    this->firstName = firstName; // 'this' pointer is used to refer to the current object
 }
 
-void Contact::setFirstName(std::string& firstName) {
-    this->firstName = firstName;
-}
-
-void Contact::setLastName(std::string& lastName) {
+void Contact::setLastName(const std::string& lastName) {
     this->lastName = lastName;
 }
 
-void Contact::setNickname(std::string& nickname) {
+void Contact::setNickname(const std::string& nickname) {
     this->nickname = nickname;
 }
 
-void Contact::setDarkestSecret(std::string& darkestSecret) {
+void Contact::setPhoneNumber(const std::string& phoneNumber) {
+    this->phoneNumber = phoneNumber;
+}
+
+void Contact::setDarkestSecret(const std::string& darkestSecret) {
     this->darkestSecret = darkestSecret;
 }
 
-std::string Contact::getFirstName() {
+// getter methods to retrieve the values of the private members
+std::string Contact::getFirstName() const {
     return firstName;
 }
 
-std::string Contact::getLastName() {
+std::string Contact::getLastName() const{
     return lastName;
 }
 
-std::string Contact::getNickname() {
+std::string Contact::getNickname() const {
     return nickname;
 }
 
-std::string Contact::getPhoneNumber() {
+std::string Contact::getPhoneNumber() const {
     return phoneNumber;
 }
-void Contact::displayContact() {
-    std::cout << "First Name: " << firstName << std::endl;
-    std::cout << "Last Name: " << lastName << std::endl;
-    std::cout << "Nickname: " << nickname << std::endl;
+void Contact::displayFullInfo() const {
+    std::cout << index + 1 << " | " << std::endl;
+    std::cout << "First Name: " << firstName << " | ";
+    std::cout << "Last Name: " << lastName << " | ";
+    std::cout << "Nickname: " << nickname << " | " << std::endl;
 }
-void Contact::clear() {
-    firstName.clear();
-    lastName.clear();
-    nickname.clear();
-    phoneNumber.clear();
-    darkestSecret.clear();
+
+std::string Contact::getTruncatedField(const std::string& field) const{
+    if (field.length() > 10) {
+        return field.substr(0, 9) + "."; // Truncate and add ellipsis
+    }
+    return field;
 }
-void Contact::setPhoneNumber(std::string& phoneNumber) {
-    this->phoneNumber = phoneNumber;
+
+bool Contact::isEmpty() const {
+    return firstName.empty() && lastName.empty() && nickname.empty() &&
+           phoneNumber.empty() && darkestSecret.empty();
 }
