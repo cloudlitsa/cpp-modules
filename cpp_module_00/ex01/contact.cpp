@@ -12,6 +12,7 @@ Contact::~Contact() {
     // cleanup code can be added here if needed
 }
 // setter methods to set the values of the private members
+
 void Contact::setFirstName(const std::string& firstName) {
     this->firstName = firstName; // 'this' pointer is used to refer to the current object
 }
@@ -31,7 +32,6 @@ void Contact::setPhoneNumber(const std::string& phoneNumber) {
 void Contact::setDarkestSecret(const std::string& darkestSecret) {
     this->darkestSecret = darkestSecret;
 }
-
 // getter methods to retrieve the values of the private members
 std::string Contact::getFirstName() const {
     return firstName;
@@ -49,10 +49,11 @@ std::string Contact::getPhoneNumber() const {
     return phoneNumber;
 }
 void Contact::displayFullInfo() const {
-    std::cout << index + 1 << " | " << std::endl;
-    std::cout << "First Name: " << firstName << " | ";
-    std::cout << "Last Name: " << lastName << " | ";
-    std::cout << "Nickname: " << nickname << " | " << std::endl;
+    std::cout << "First Name: " << firstName << std::endl;
+    std::cout << "Last Name: " << lastName << std::endl;
+    std::cout << "Nickname: " << nickname << std::endl;
+    std::cout << "Phone Number: " << phoneNumber << std::endl;
+    std::cout << "Darkest Secret: " << darkestSecret << std::endl;
 }
 
 std::string Contact::getTruncatedField(const std::string& field) const{

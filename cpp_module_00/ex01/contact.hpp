@@ -6,6 +6,7 @@
 
 class Contact {
 private:
+    int index; // Index of the contact in the phonebook
     std::string firstName;
     std::string lastName;
     std::string nickname;

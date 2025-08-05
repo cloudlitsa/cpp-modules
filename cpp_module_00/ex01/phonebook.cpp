@@ -29,7 +29,7 @@ void PhoneBook::addContact() {
     }
 }
 
-void PhoneBook::searchContact(std::string& name) {
+void PhoneBook::searchContacts() {
     if (contactCount == 0) {
         std::cout << "No contacts available." << std::endl;
         return;
@@ -62,7 +62,6 @@ Contact PhoneBook::createContactFromInput() {
         std::cout << "First name cannot be empty." << std::endl;
     }
     contact.setFirstName(input);
-
     std::cout << "Enter last name: ";
     std::getline(std::cin, input);
     if (input.empty()) {
@@ -100,7 +99,7 @@ void PhoneBook::displayContactsTable() {
         std::cout << " | " << std::setw(10) << (i + 1) << " | "
                   << std::setw(10) << contacts[i].getTruncatedField(contacts[i].getFirstName()) << " | "
                   << std::setw(10) << contacts[i].getTruncatedField(contacts[i].getLastName()) << " | "
-                  << std::setw(10) << contacts[i].getTruncatedField(contacts[i].getNickname())
+                  << std::setw(10) << contacts[i].getTruncatedField(contacts[i].getNickname())<< " | "
                   << std::endl;
     }
 }

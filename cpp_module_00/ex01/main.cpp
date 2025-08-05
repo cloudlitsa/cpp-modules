@@ -18,11 +18,11 @@ int main() {
         std::cout << "No input - exiting." << std::endl;
         break;
         }
-        if (command == "ADD") {
+        if (command == "ADD" || command == "add") {
         phoneBook.addContact();
-        } else if (command == "SEARCH") {
+        } else if (command == "SEARCH" || command == "search") {
         phoneBook.searchContacts();
-        } else if (command == "EXIT") {
+        } else if (command == "EXIT" || command == "exit") {
         std::cout << "Exiting PhoneBook. Goodbye!" << std::endl;
         break;
         } else {
