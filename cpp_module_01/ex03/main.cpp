@@ -3,6 +3,31 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
+int main(){
+    {
+        Weapon club = Weapon("crude spiked club");
+        // Create a HumanA object with a reference to the Weapon
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        // Demonstrating HumanB which can have a weapon set later
+        HumanB jim("Jim");
+        jim.attack(); // Jim tries to attack without a weapon (should handle null case)
+        // Set the weapon for Jim
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+    return 0;
+}
+
+
+/*
 int main() {
     Weapon club("baseball bat"); // Create a Weapon object
     HumanA bob("Bob", club); // Create a HumanA object with a reference to the Weapon
@@ -32,3 +57,4 @@ int main() {
 
     return 0;
 }
+*/
