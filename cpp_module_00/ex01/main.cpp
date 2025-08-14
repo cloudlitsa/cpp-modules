@@ -19,9 +19,9 @@ int main() {
         break;
         }
         if (command == "ADD" || command == "add") {
-        PhoneBook.addContact();
+        phoneBook.addContact();
         } else if (command == "SEARCH" || command == "search") {
-        PhoneBook.searchContacts();
+        phoneBook.searchContacts();
         } else if (command == "EXIT" || command == "exit") {
         std::cout << "Exiting PhoneBook. Goodbye!" << std::endl;
         break;
