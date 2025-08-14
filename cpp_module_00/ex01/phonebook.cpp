@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <iomanip> // For std::setw
-#include "phonebook.hpp"
-#include "contact.hpp"
+#include "PhoneBook.hpp"
+#include "Contacts.hpp"
 
 PhoneBook::PhoneBook() : nextIndex(0), contactCount(0) {
     // Constructor implementation
@@ -52,7 +52,7 @@ void PhoneBook::searchContacts() {
     }
 }
 //private helper: create a contact from user input
-Contact PhoneBook::createContactFromInput() {
+Contacts PhoneBook::createContactFromInput() {
     Contact contact;
     std::string input;
 
@@ -61,20 +61,20 @@ Contact PhoneBook::createContactFromInput() {
     if (input.empty()) {
         std::cout << "First name cannot be empty." << std::endl;
     }
-    contact.setFirstName(input);
+    contacts.setFirstName(input);
     std::cout << "Enter last name: ";
     std::getline(std::cin, input);
     if (input.empty()) {
         std::cout << "Last name cannot be empty." << std::endl;
     }
-    contact.setLastName(input);
+    contacts.setLastName(input);
 
     std::cout << "Enter nickname: ";
     std::getline(std::cin, input);
     if (input.empty()) {
         std::cout << "Nickname cannot be empty." << std::endl;
     }
-    contact.setNickname(input);
+    contacts.setNickname(input);
 
     std::cout << "Enter phone number: ";
     std::getline(std::cin, input);
@@ -88,9 +88,9 @@ Contact PhoneBook::createContactFromInput() {
     if (input.empty()) {
         std::cout << "Darkest secret cannot be empty." << std::endl;
     }
-    contact.setDarkestSecret(input);
+    contacts.setDarkestSecret(input);
 
-    return contact;
+    return contacts;
 }
 // private helper: display all contacts in a formatted table
 void PhoneBook::displayContactsTable() {

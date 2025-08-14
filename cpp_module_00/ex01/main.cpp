@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int main() {
     PhoneBook phoneBook;
@@ -19,9 +19,9 @@ int main() {
         break;
         }
         if (command == "ADD" || command == "add") {
-        phoneBook.addContact();
+        PhoneBook.addContact();
         } else if (command == "SEARCH" || command == "search") {
-        phoneBook.searchContacts();
+        PhoneBook.searchContacts();
         } else if (command == "EXIT" || command == "exit") {
         std::cout << "Exiting PhoneBook. Goodbye!" << std::endl;
         break;

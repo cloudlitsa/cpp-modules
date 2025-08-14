@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
 int main() {
-    int hordeSize = 5; // Size of the zombie horde
+    const int hordeSize = 5; // Size of the zombie horde
     std::string zombieName = "Zombie";
 
     std::cout << "Creating a horde of " << hordeSize << " zombies named " << zombieName << "..." << std::endl;

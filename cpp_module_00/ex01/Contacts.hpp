@@ -1,10 +1,10 @@
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
+#ifndef CONTACTS_HPP
+#define CONTACTS_HPP
 
 #include<iostream>
 #include<string>
 
-class Contact {
+class Contacts {
 private:
     int index; // Index of the contact in the phonebook
     std::string firstName;
@@ -13,8 +13,8 @@ private:
     std::string phoneNumber;
     std::string darkestSecret;
 public:
-    Contact(); // Constructor
-    ~Contact(); // Destructor
+    Contacts(); // Constructor
+    ~Contacts(); // Destructor
 // Setters
     void setFirstName(const std::string& firstName);
     void setLastName(const std::string& lastName);
