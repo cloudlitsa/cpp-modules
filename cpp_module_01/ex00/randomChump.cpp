@@ -2,7 +2,7 @@
 
 // creates a zombie in the stack
 // destroyed automatically when function ends
-void randonChump(std::string name) {
+void randomChump(std::string name) {
     Zombie zombie(name);
     zombie.announce();
     // automatically destroyed here

@@ -2,6 +2,7 @@
 
 // constructor
 Zombie::Zombie() : name("Unnamed") {
+    std::cout << "====== Creating hoard of zombies =====" << std::endl;
     std::cout << "Unnamed zombie is born!" << std::endl;
 }
 // Parameterized constructor
