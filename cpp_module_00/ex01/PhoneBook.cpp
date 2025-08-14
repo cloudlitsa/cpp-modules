@@ -20,9 +20,38 @@ std::string trim(const std::string& str) {
     return str.substr(start, end - start + 1);    
 }
 
+std::string getInput(const std::string& prompt) {
+    std::string input;
+
+    do {
+        std::cout << prompt;
+        std::getline(std::cin, input);
+        input = trim(input);
+    } while (input.empty());
+    return input;
+}
+/*
+Contacts PhoneBook::createContactFromInput() {
+    std::cout << "Adding a new contact..." << std::endl;
+    Contacts newContact;
+
+    newContact.setFirstName(getInput("First name: "));
+    newContact.setLastName(getInput("Last name: "));
+    newContact.setNickname(getInput("Nickname: "));
+    newContact.setPhoneNumber(getInput("Phone number: "));
+    newContact.setDarkestSecret(getInput("Darkest secret: "));
+}
+*/
 void PhoneBook::addContact() {
     std::cout << "Adding a new contact..." << std::endl;
-    Contacts newContact = createContactFromInput();
+    
+    Contacts newContact;
+    newContact.setFirstName(getInput("First name: "));
+    newContact.setLastName(getInput("Last name: "));
+    newContact.setNickname(getInput("Nickname: "));
+    newContact.setPhoneNumber(getInput("Phone number: "));
+    newContact.setDarkestSecret(getInput("Darkest secret: "));
+
     contacts[nextIndex] = newContact;
 
     if (contactCount < 8) {
@@ -59,6 +88,7 @@ void PhoneBook::searchContacts() {
         std::cout << "Please enter a valid index." << std::endl;
     }
 }
+/*
 //private helper: create a contact from user input
 Contacts PhoneBook::createContactFromInput() {
     Contacts contact;
@@ -141,6 +171,7 @@ Contacts PhoneBook::createContactFromInput() {
 
     return contact;
 }
+    */
 // private helper: display all contacts in a formatted table
 void PhoneBook::displayContactsTable() {
    
