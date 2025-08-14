@@ -16,8 +16,8 @@ public:
     void announce(void); // Function to announce the zombie's presence
     // Set name function
     void setName(std::string name);
-};
 
-Zombie* zombieHorde(int N, std::string name); // Function prototype to create a horde of zombies
+    Zombie* zombieHorde(int N, std::string name); // Function prototype to create a horde of zombies
+};
 
 #endif

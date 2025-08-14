@@ -34,14 +34,15 @@ bool Sed::writeFile(const std::string& content, const std::string& outputFilenam
     }
     outFile << content; // Write the modified content to the output file
     outFile.close();
-    std::cout << "File written successfully to: " << outputFilename << std::endl;
+    // std::cout << "File written successfully to: " << outputFilename << std::endl;
     return true; // Return true if writing was successful
 }
 //private method to replace all occurrences of a string in the content witout using std::string::replace
 std::string Sed::replaceAll(const std::string& content, const std::string& search, const std::string& replace) {
-    if (search.empty()) {
-        return content; // If search string is empty, return original content
-    }
+    // if (search.empty()) {
+    //     std::cout << "Nothing to replace with.\n";
+    //     return content; // If search string is empty, return original content
+    // }
     std::string result = content;
     size_t pos = 0;
     while ((pos = result.find(search, pos)) != std::string::npos) { // npos is a special constant indicating no position found, no substring found

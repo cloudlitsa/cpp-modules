@@ -5,8 +5,8 @@ int main() {
     std::string zombieName = "Mozbie";
 
     std::cout << "Creating a horde of " << hordeSize << " zombies named " << zombieName << "..." << std::endl;
-
-    Zombie* horde = zombieHorde(hordeSize, zombieName); // variable to hold the pointer to the horde of zombies
+    Zombie z;
+    Zombie* horde = z.zombieHorde(hordeSize, zombieName); // variable to hold the pointer to the horde of zombies
     if (horde) {
         for (int i = 0; i < hordeSize; ++i) {
             std::cout << "Zombie " << i + 1 << ": ";

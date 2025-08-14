@@ -13,10 +13,12 @@ public:
     ~Zombie(); //destructor
 
     void announce(void); //member function
+
+    // function prototypes
+    Zombie* newZombie(std::string name); // creates a zombie in the heap, functuin returns pointer to Zombie
+    // survives outside function scope, must be deleted later
+    void randomChump(std::string name); // creates a zombie in the stack, automatically destroyed when function ends
+
 };
-// function prototypes
-Zombie* newZombie(std::string name); // creates a zombie in the heap, functuin returns pointer to Zombie
-// survives outside function scope, must be deleted later
-void randomChump(std::string name); // creates a zombie in the stack, automatically destroyed when function ends
 
 #endif
