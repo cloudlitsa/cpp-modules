@@ -12,6 +12,14 @@ PhoneBook::~PhoneBook() {
     // Destructor implementation
 }
 
+std::string trim(const std::string& str) {
+    size_t start = str.find_first_not_of(" \t");
+    if (start == std::string::npos)
+        return "";
+    size_t end = str.find_last_not_of(" \t");
+    return str.substr(start, end - start + 1);    
+}
+
 void PhoneBook::addContact() {
     std::cout << "Adding a new contact..." << std::endl;
     Contacts newContact = createContactFromInput();
@@ -58,35 +66,76 @@ Contacts PhoneBook::createContactFromInput() {
 
     std::cout << "Enter first name: ";
     std::getline(std::cin, input);
+    input = trim(input);
     if (input.empty()) {
         std::cout << "First name cannot be empty." << std::endl;
+        while (input.empty()) {
+            std::cout << "Enter first name: ";
+            std::getline(std::cin, input);
+            input = trim(input);
+            if (!input.empty())
+                break;
+        }
     }
     contact.setFirstName(input);
+    
     std::cout << "Enter last name: ";
     std::getline(std::cin, input);
+    input = trim(input);
     if (input.empty()) {
         std::cout << "Last name cannot be empty." << std::endl;
+        while (input.empty()) {
+            std::cout << "Enter last name: ";
+            std::getline(std::cin, input);
+            input = trim(input);
+            if (!input.empty())
+                break;
+        }
     }
     contact.setLastName(input);
 
     std::cout << "Enter nickname: ";
     std::getline(std::cin, input);
+    input = trim(input);
     if (input.empty()) {
         std::cout << "Nickname cannot be empty." << std::endl;
+        while (input.empty()) {
+            std::cout << "Enter Nickname: ";
+            std::getline(std::cin, input);
+            input = trim(input);
+            if (!input.empty())
+                break;
+        }
     }
     contact.setNickname(input);
 
     std::cout << "Enter phone number: ";
     std::getline(std::cin, input);
+    input = trim(input);
     if (input.empty()) {
         std::cout << "Phone number cannot be empty." << std::endl;
+        while (input.empty()) {
+            std::cout << "Enter phone number: ";
+            std::getline(std::cin, input);
+            input = trim(input);
+            if (!input.empty())
+                break;
+        }
     }
     contact.setPhoneNumber(input);
 
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, input);
+    input = trim(input);
     if (input.empty()) {
         std::cout << "Darkest secret cannot be empty." << std::endl;
+        while (input.empty()) {
+            std::cout << "Enter darkest secret: ";
+            std::getline(std::cin, input);
+            input = trim(input);
+            if (!input.empty())
+                break;
+        }
     }
     contact.setDarkestSecret(input);
 
@@ -108,7 +157,7 @@ void PhoneBook::displayContactsTable() {
 void PhoneBook::displayContactAtIndex(int index) {
     std::cout << "Contact Details:" << std::endl;
     contacts[index].displayFullInfo();
-    std::cout << std::endl;
+    // std::cout << std::endl;
 }
 
 // private helper: formats string for table display

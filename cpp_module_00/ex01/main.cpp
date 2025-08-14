@@ -12,7 +12,7 @@ int main() {
     std::cout << "Type <EXIT> to exit the program." << std::endl;
     
     while (true) {
-        std::cout << "Enter command: ";
+        std::cout << "Enter command: <ADD> or <SEARCH> or <EXIT>" << std::endl;
 
         if (!std::getline(std::cin, command)) {
         std::cout << "No input - exiting." << std::endl;
