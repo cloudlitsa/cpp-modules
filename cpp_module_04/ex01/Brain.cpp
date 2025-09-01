@@ -12,14 +12,14 @@ Brain::Brain(const Brain& other) {
     std::cout << "Brain copy constructor called" << std::endl;
     // Deep copy - copy each idea individually
     for (int i = 0; i < 100; ++i) {
-        ideas[i] = other.ideas[i];
+            ideas[i] = other.ideas[i]; // copy each idea one by one 
     }
 }
 
 Brain& Brain::operator=(const Brain& other) {
     std::cout << "Brain assignment operator called" << std::endl;
     if (this != &other) {
-        // Deep copy each idea
+        // Deep copy each idea (copying the content of the ideas array one by one)
         for (int i = 0; i < 100; ++i) {
             ideas[i] = other.ideas[i];
         }
