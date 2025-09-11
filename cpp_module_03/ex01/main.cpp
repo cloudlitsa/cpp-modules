@@ -2,6 +2,7 @@
 #include "ScavTrap.hpp"
 
 int main() {
+ {
     std::cout << "=====ClapTrap tests=====" << std::endl;
     ClapTrap clap("Clappy"); // Parameterized constructor
     clap.attack("Target"); // Should succeed
@@ -10,7 +11,7 @@ int main() {
     clap.takeDamage(10); // This should destroy the ClapTrap
     clap.attack("Target"); // This should not work as ClapTrap is destroyed
     clap.beRepaired(5); // This should not work as ClapTrap is dead - destroyed
-
+}
     std::cout << "\n=====ScavTrap tests=====" << std::endl;
     ScavTrap scav("Scavvy"); // Parameterized constructor
     scav.attack("Pacman"); // Should succeed

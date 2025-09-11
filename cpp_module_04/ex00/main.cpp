@@ -17,10 +17,10 @@ int main() {
     std::cout << "i types is "<< i->getType() << std::endl; // Should output "Cat"
     std::cout << "k types is "<< k->getType() << std::endl; // Should output "WrongCat"
 
-    meta->makeSound(); // Should output "Kakophony."
+    meta->makeSound(); // Should output "Generic animal sound"
     j->makeSound(); // Should output "Woof Woof!"
     i->makeSound(); // Should output "Meow Meaow!"
-    k->makeSound(); // Should output "Swizzle-wizzle!"
+    k->makeSound(); // Should output "Swizzle-wizzle!" when virtual is used, otherwise kakophony
 
     delete meta;
     delete j;

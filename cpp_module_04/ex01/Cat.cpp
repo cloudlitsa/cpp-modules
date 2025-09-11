@@ -15,6 +15,8 @@ Cat::Cat(const Cat& other) : Animal(other), brain(new Brain(*other.brain)) {
 Cat& Cat::operator=(const Cat& other) {
     if (this != &other) {
         Animal::operator=(other); // Call base class assignment operator
+        // delete brain;
+        // this->brain = new Brain;
         *brain = *(other.brain); // Deep copy the Brain
     }
     std::cout << "Cat with brain assignment operator called.\n";

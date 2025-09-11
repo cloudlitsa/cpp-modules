@@ -64,7 +64,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
                   << " damage! Hit points left: " << hitPoints << ".\n";
     }
 }
-// Repair function
+// Repair function (keeping the max health uncapped for now)
 void ClapTrap::beRepaired(unsigned int amount) {
     if (hitPoints == 0) {
         std::cout << "ClapTrap " << name << " has no hit points left and cannot be repaired.\n";

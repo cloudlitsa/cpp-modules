@@ -5,7 +5,7 @@
 #include <iostream>
 
 class ClapTrap {
-protected: // Protected members to allow access in derived classes (for inheritance)
+private: // Protected members to allow access in derived classes (for inheritance)
     std::string name;
     unsigned int hitPoints;
     unsigned int energyPoints;

@@ -9,7 +9,7 @@
 class AAnimal {
 protected:
     std::string type;
-    Brain* brain;
+
 public:
     AAnimal(); // Default constructor
     AAnimal(const AAnimal& other); // Copy constructor

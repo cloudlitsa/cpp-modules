@@ -8,9 +8,9 @@ public:
     Dog(); // Default constructor
     Dog(const Dog& other); // Copy constructor
     Dog& operator=(const Dog& other); // Copy assignment operator
-    virtual ~Dog(); // Virtual destructor
+    ~Dog(); // Virtual destructor
 
-    virtual void makeSound() const; // Override the virtual function makeSound
+    void makeSound() const; // Override the virtual function makeSound
 };
 
 #endif

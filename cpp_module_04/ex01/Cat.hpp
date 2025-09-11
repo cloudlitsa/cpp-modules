@@ -5,7 +5,7 @@
 #include "Brain.hpp"
 
 class Cat : public Animal {
-    private:
+private:
         Brain* brain;
 public:
     Cat(); // Default constructor

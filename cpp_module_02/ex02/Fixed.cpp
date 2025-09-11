@@ -45,16 +45,17 @@ void Fixed::setRawBits(int const raw) {
     _rawValue = raw;
 }
 // Comparison operators
-bool Fixed::operator==(const Fixed& other) const {
+bool Fixed::operator == (const Fixed& other) const {
     return _rawValue == other._rawValue;
 }
-bool Fixed::operator!=(const Fixed& other) const {      
+bool Fixed::operator != (const Fixed& other) const {      
     return _rawValue != other._rawValue;
 }
-bool Fixed::operator<(const Fixed& other) const {
+bool Fixed::operator < (const Fixed& other) const {
     return _rawValue < other._rawValue;
 }
-bool Fixed::operator<=(const Fixed& other) const {
+bool Fixed::operator <= (const Fixed& other) const 
+{
     return _rawValue <= other._rawValue;
 }
 bool Fixed::operator>(const Fixed& other) const {

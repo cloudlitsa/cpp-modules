@@ -17,10 +17,10 @@ protected: // Protected members to allow access in derived classes (for inherita
     ClapTrap(const std::string& name); // Parameterized constructor
     ClapTrap(const ClapTrap& other); // Copy constructor
     ClapTrap& operator=(const ClapTrap& other); // Copy assignment operator
-    ~ClapTrap(); // Destructor
+    virtual ~ClapTrap(); // Destructor
 
     // Member functions
-    void attack(const std::string& target);
+    virtual void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 

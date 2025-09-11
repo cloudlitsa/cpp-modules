@@ -6,6 +6,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 all: $(NAME)
+#	valgrind ./$(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
@@ -19,4 +20,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean all
+re: fclean all clean
+
+.PHONY:  fclean all clean re
